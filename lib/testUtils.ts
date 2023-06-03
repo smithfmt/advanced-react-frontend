@@ -44,7 +44,7 @@ const fakeOrder = () => ({
   user: fakeUser(),
 });
 
-const fakeCartItem = overrides => ({
+const fakeCartItem = (overrides: any) => ({
   __typename: 'CartItem',
   id: 'omg123',
   quantity: 3,
@@ -55,26 +55,28 @@ const fakeCartItem = overrides => ({
 
 // Fake LocalStorage
 class LocalStorageMock {
+  private store: Record<string, string>;
+
   constructor() {
     this.store = {};
-  }
+  };
 
-  clear() {
+  clear(): void {
     this.store = {};
-  }
+  };
 
-  getItem(key) {
+  getItem(key: string): string | null {
     return this.store[key] || null;
-  }
+  };
 
-  setItem(key, value) {
+  setItem(key: string, value: string): void {
     this.store[key] = value.toString();
-  }
+  };
 
-  removeItem(key) {
+  removeItem(key: string): void {
     delete this.store[key];
-  }
-}
+  };
+};
 
 export {
   LocalStorageMock,
