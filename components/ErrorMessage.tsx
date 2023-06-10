@@ -18,7 +18,7 @@ const ErrorStyles = styled.div`
   }
 `;
 
-const DisplayError = ({ error }: any) => {
+const ErrorMessage = ({ error }: any) => {
   if (!error || !error.message) return null;
   if (error.networkError && error.networkError.result && error.networkError.result.errors.length) {
     return error.networkError.result.errors.map((error: any, i: number) => (
@@ -40,12 +40,12 @@ const DisplayError = ({ error }: any) => {
   );
 };
 
-DisplayError.defaultProps = {
+ErrorMessage.defaultProps = {
   error: {},
 };
 
-DisplayError.propTypes = {
+ErrorMessage.propTypes = {
   error: PropTypes.object,
 };
 
-export default DisplayError;
+export default ErrorMessage;

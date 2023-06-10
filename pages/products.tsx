@@ -1,8 +1,10 @@
+import Products from "../components/Products";
+
 const ProductsPage = () => {
     return (
-        <>
-            <p>Products</p>
-        </>
+        < div>
+            <Products />
+        </ div>
     );
 };
 

@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
-const Item = styled.div`
+const ItemStyles = styled.div`
   background: white;
-  border: 1px solid ${props => props.theme.offWhite};
-  box-shadow: ${props => props.theme.bs};
+  border: 1px solid var(--offWhite);
+  box-shadow: var(--bs);
   position: relative;
   display: flex;
   flex-direction: column;
@@ -35,4 +35,4 @@ const Item = styled.div`
   }
 `;
 
-export default Item;
+export default ItemStyles;

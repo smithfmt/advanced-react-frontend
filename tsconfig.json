@@ -107,7 +107,8 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "pages/_app.tsx"
+    "pages/_app.tsx",
+    "lib/useForm.js"
   ],
   "exclude": [
     "node_modules"

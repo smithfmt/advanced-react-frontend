@@ -1,7 +1,7 @@
-const formatMoney = (amount: number) => {
+const formatMoney = (amount: number = 0) => {
   const options = {
     style: 'currency',
-    currency: 'USD',
+    currency: 'GBP',
     minimumFractionDigits: 2,
   };
   // if its a whole, dollar amount, leave off the .00

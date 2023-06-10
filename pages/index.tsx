@@ -1,9 +1,1 @@
-const Homepage = () => {
-    return (
-        <>
-            <p>Home</p>
-        </>
-    );
-};
-
-export default Homepage;
+export { default } from "./products";

@@ -1,8 +1,10 @@
+import CreateProduct from "../components/CreateProduct";
+
 const SellPage = () => {
     return (
-        <>
-            <p>Sell</p>
-        </>
+        <div>
+            <CreateProduct />
+        </div>
     );
 };
 
