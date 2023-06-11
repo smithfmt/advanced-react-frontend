@@ -63,9 +63,6 @@ const Page = ({ children }: { children: ReactNode }) => {
         <div>
             <GlobalStyles />
             <Header />
-            <h2>
-                Page Wrapper
-            </h2>
             <InnerStyles>{children}</InnerStyles>
         </div>
     );
