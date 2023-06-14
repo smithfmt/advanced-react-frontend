@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 
-const CartStyles = styled.div`
+type Props = {
+  open: boolean,
+}
+
+const CartStyles = styled.div<Props>`
   padding: 20px;
   position: relative;
   background: white;

@@ -1,30 +1,29 @@
-// @ts-nocheck
 import { ApolloProvider } from '@apollo/client';
 import NProgress from 'nprogress';
 import Router from 'next/router';
 import Page from '../components/Page';
 import '../components/styles/nprogress.css';
 import withData from '../lib/withData';
-// import { CartStateProvider } from '../lib/cartState';
+import { CartStateProvider } from '../lib/cartState';
 
 Router.events.on('routeChangeStart', () => NProgress.start());
 Router.events.on('routeChangeComplete', () => NProgress.done());
 Router.events.on('routeChangeError', () => NProgress.done());
 
-const MyApp = ({ Component, pageProps, apollo }) => {
+const MyApp = ({ Component, pageProps, apollo }: any) => {
     return (
         <ApolloProvider client={apollo}>
-            {/* <CartStateProvider> */}
-            <Page>
-                <Component {...pageProps} />
-            </Page>
-            {/* </CartStateProvider> */}
+            <CartStateProvider>
+                <Page>
+                    <Component {...pageProps} />
+                </Page>
+            </CartStateProvider>
         </ApolloProvider>
     );
 };
 
-MyApp.getInitialProps = async ({ Component, ctx }) => {
-    let pageProps = {};
+MyApp.getInitialProps = async ({ Component, ctx }: any) => {
+    let pageProps: any = {};
     if (Component.getInitialProps) {
         pageProps = await Component.getInitialProps(ctx);
     }
@@ -32,7 +31,7 @@ MyApp.getInitialProps = async ({ Component, ctx }) => {
     return { pageProps };
 };
 
-export default withData(MyApp);
+export default withData(MyApp as any);
 
 
 

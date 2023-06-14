@@ -14,8 +14,15 @@ const DELETE_PRODUCT_MUTATION = gql`
     }
 `;
 
+const update = (cache: any, payload: any) => {
+    cache.evict(cache.identify(payload.data.deleteProduct))
+};
+
 const DeleteProduct = ({ id, children }: Props) => {
-    const [deleteProduct, { loading }] = useMutation(DELETE_PRODUCT_MUTATION, { variables: { id } });
+    const [deleteProduct, { loading }] = useMutation(
+        DELETE_PRODUCT_MUTATION,
+        { variables: { id }, update, },
+    );
     return (
         <button type="button" disabled={loading} onClick={() => {
             if (confirm("Are you sure you want to delete this item?")) {
