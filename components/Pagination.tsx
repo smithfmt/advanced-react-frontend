@@ -24,7 +24,7 @@ const Pagination = ({ page }: Props) => {
     return (
         <PaginationStyles>
             <Head>
-                <title> Sick Fits - Page {page} of ___</title>
+                <title> Sick Fits - Page {page} of {pageCount}</title>
             </Head>
             <Link href={`/products/${page - 1}`} aria-disabled={page <= 1}>{"<- Prev"}</Link>
             <p>Page {page} of {pageCount}</p>
