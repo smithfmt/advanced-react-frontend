@@ -1,3 +1,3 @@
 # Advanced-React
 
-frontend
+Advanced React course by developer Wes Bos
